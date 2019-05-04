@@ -10,7 +10,7 @@
 
 	<link rel="stylesheet" type="text/css" href="css/dot.css">
 
-	<link rel="stylesheet" href="http://calamus.wiki/calamus-live2d/demo1/live2d/css/live2d.css" />
+	<link rel="stylesheet" href="demo1/live2d/css/live2d.css" />
 
     <link rel="stylesheet" href="css/1.css">
     <script type="text/javascript">
@@ -92,22 +92,10 @@
                       
         </div>
 <!--看板娘-->
-<div>
-    <div id="landlord">
-	  <div class="message" style="opacity:0"></div>
-	  <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
-	  <div class="hide-button">隐藏</div>
-	</div>
-	  <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-	  <script type="text/javascript">
-		var message_Path = 'http://calamus.wiki/calamus-live2d/demo1/live2d/'
-		var home_Path = 'http://calamus.wiki/calamus-live2d/demo1/'
-	</script>
-	  <script type="text/javascript" src="http://calamus.wiki/calamus-live2d/demo1/live2d/js/live2d.js"></script>
-	  <script type="text/javascript" src="http://calamus.wiki/calamus-live2d/demo1/live2d/js/message.js"></script>
-	  <script type="text/javascript">
-		loadlive2d("live2d", "http://calamus.wiki/calamus-live2d/demo1/live2d/model/kesshouban_v2/model.json");
-	  </script>
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
 </div>
 
 
@@ -151,6 +139,16 @@
 
 
 
+
+<script type="text/javascript">
+    var message_Path = 'demo1/live2d/'
+    var home_Path = 'https://zjlzjl.fun/'  //此处修改为你的域名，必须带斜杠
+</script>
+<script type="text/javascript" src="demo1/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="demo1/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "demo1/live2d/model/tia/model.json");
+</script>
 </body>
 
 </html>
