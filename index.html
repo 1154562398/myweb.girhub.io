@@ -1,7 +1,16 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <link rel="stylesheet" href="1.css">
+        <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/lazyload.css">
+    <script src="js/lazyload.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="css/dot.css">
+
+    <link rel="stylesheet" href="css/1.css">
     <script type="text/javascript">
 	/*打开侧栏，修改侧栏宽度，主体左跨度、背景透明度*/
 	function openNav() {
@@ -46,6 +55,7 @@
 
 </head>
 <body>
+	
 <!--侧栏界面设计-->
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -67,13 +77,14 @@
     <label style="font-style: initial;text-align: right;color:ivory;">zjlの个人空间</label>
     </div>
 
-   
     
 <!--背景音乐-->
         <div >
             <div >
-                
-                <embed autostart=true src="/music/Carole - The Loneliest Girl (Extended).mp3" hidden="true">
+                <audio autoplay="true" src="http://m10.music.126.net/20190504133644/81a35f787d87f616dcde1bc421ad4a29/ymusic/075e/5558/065e/04b4267b03b2594d45e91439220a9d21.mp3">
+
+				</audio>
+               <!--<embed autostart=true src="/music/Carole - The Loneliest Girl (Extended).mp3" hidden="true">--> 
             </div>
                       
         </div>
@@ -81,107 +92,42 @@
         <script src="live2d-widget/autoload.js"></script>
 
 
-<!--主页内容-->
-
-<div>
- <div id="main">
-		<div class="box">
-			<div class="pic">
-				<img src="image/P_00.jpg" />
-			</div>
+<!--主页内容-->		
+<div id="box">
+		<div  class="pic-container">
+			<ul class="pic-content">
+				<li class="pic-wrapper"></li>
+				<li class="pic-wrapper"></li>
+				<li class="pic-wrapper"></li>
+				<li class="pic-wrapper"></li>
+				<li class="pic-wrapper"></li>
+				<li class="pic-wrapper"></li>
+			</ul>
 		</div>
-		<div class="box">
-			<div class="pic">
-				<img src="image/P_01.jpg" />
-			</div>
-		</div>
-		<div class="box">
-			<div class="pic">
-				<img src="image/P_02.jpg" />
-			</div>
-		</div>
-		<div class="box">
-			<div class="pic">
-				<img src="image/P_03.jpg" />
-			</div>
-		</div>
-		<div class="box">
-			<div class="pic">
-				<img src="image/P_04.jpg" />
-			</div>
-		</div>
-		<div class="box">
-			<div class="pic">
-				<img src="image/P_05.jpg" />
-			</div>
-		</div>
-		<div class="box">
-			<div class="pic">
-				<img src="image/P_06.jpg" />
-			</div>
-		</div>
-		<div class="box">
-			<div class="pic">
-				<img src="image/P_07.jpg" />
-			</div>
-		</div>
-		<div class="box">
-			<div class="pic">
-				<img src="image/P_08.jpg" />
-			</div>
-		</div>
-		<div class="box">
-			<div class="pic">
-				<img src="image/P_09.jpg" />
-			</div>
-		</div>
-		<div class="box">
-			<div class="pic">
-				<img src="image/P_010.jpg" />
-			</div>
-		</div>
-		<div class="box">
-			<div class="pic">
-				<img src="image/P_011.jpg" />
-			</div>
-		</div>
-		<div class="box">
-			<div class="pic">
-				<img src="image/P_012.jpg" />
-			</div>
-		</div>
-		<div class="box">
-			<div class="pic">
-				<img src="image/P_013.jpg" />
-			</div>
-		</div>
-		<div class="box">
-			<div class="pic">
-				<img src="image/P_014.jpg" />
-			</div>
-		</div>
-		<div class="box">
-			<div class="pic">
-				<img src="image/P_015.jpg" />
-			</div>
-		</div>
-		<div class="box">
-			<div class="pic">
-				<img src="image/P_016.jpg" />
-			</div>
-		</div>
-		<div class="box">
-			<div class="pic">
-				<img src="image/P_017.jpg" />
-			</div>
-		</div>
-		<div class="box">
-			<div class="pic">
-				<img src="image/P_018.jpg" />
-			</div>
-		</div>
+	
 	</div>
-</div> 
+	
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	
+		<script>
+			lazyload({
+				container: $('.pic-container'),
+				width: 255,             // 宽度默认与$pic_wrapper宽度一致 图片宽度设置不宜过大
+				data: ["image/P_04.jpg",
+				"image/P_05.jpg","image/P_06.jpg","image/P_07.jpg","image/P_08.jpg","image/P_09.jpg"
+				,"image/P_010.jpg","image/P_011.jpg","image/P_012.jpg","image/P_013.jpg","image/P_014.jpg","image/P_015.jpg"
+				,"image/P_016.jpg","image/P_016.jpg","image/P_017.jpg","image/P_018.jpg"],                      // data可以填写img的本地存放地址，若不填则默认从网上随机加载
+				random: false,           // 若data和random参数都未设置时，则默认true
+				count: 10,             // 若random参数设置为true时，此参数方可生效，默认50
+				num: 5,                 // 每次请求的图片数量 默认5
+				threshold: 50,          // 临界值 当可视区域离图片还有 threshold 个象素的时候开始加载图片
+				animate: 'scale',       // fade slideDown
+				time : 500              // 毫秒计 动画完成时间
+			});
+	
+		</script>
 
 
 
